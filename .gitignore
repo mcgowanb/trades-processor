@@ -1,0 +1,43 @@
+# IntelliJ IDE Files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Eclipse IDE Files
+.project
+.settings
+.classpath
+
+# Maven Build Files
+target
+pom.xml.versionsBackup
+overlays
+
+# Mac OS
+.DS_Store
+
+# Factory Path
+*.factorypath
+
+# Temp Files
+*.*~
+
+# Log4J Local
+local.log
+
+#Test files
+bower_components
+node_modules
+bin
+coverage
+.vscode
+
+*~
+
+*.csv
+
+#terraform
+terraform/.terraform
+terraform/terraform.*
+terraform.*
