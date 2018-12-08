@@ -1,4 +1,4 @@
-package com.mcgown.trades.web.controller;
+package com.mcgowan.trades.web.controller;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -14,7 +14,7 @@ import com.mcgowan.trades.common.TradeDTO;
 public class ApiController {
 
   @PostMapping("/trade")
-  public HttpStatus processTrade(@RequestBody final TradeDTO tradeDTO){
+  public HttpStatus processTrade(@RequestBody final TradeDTO tradeDTO) {
     return HttpStatus.OK;
   }
 }

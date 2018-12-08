@@ -1,4 +1,4 @@
-package com.mcgown.trades.web.config;
+package com.mcgowan.trades.web.config;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -14,8 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
   @Bean
   public Docket api() {
-    return new Docket(DocumentationType.SWAGGER_2)
-        .select()
+    return new Docket(DocumentationType.SWAGGER_2).select()
         .apis(RequestHandlerSelectors.any())
         .paths(PathSelectors.any())
         .build();

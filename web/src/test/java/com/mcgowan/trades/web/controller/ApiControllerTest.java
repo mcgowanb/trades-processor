@@ -1,4 +1,4 @@
-package com.mcgown.trades.web.controller;
+package com.mcgowan.trades.web.controller;
 
 import static junit.framework.TestCase.assertTrue;
 
