@@ -13,7 +13,7 @@
   <artifactId>web</artifactId>
 
   <properties>
-    <org.springframework.version>2.1.1.RELEASE</org.springframework.version>
+    <org.springframework.version>${spring-boot-starter-actuator.version}</org.springframework.version>
     <springfox-swagger.version>2.9.2</springfox-swagger.version>
   </properties>
 
@@ -38,6 +38,10 @@
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger-ui</artifactId>
       <version>${springfox-swagger.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
     <dependency>
       <groupId>com.mcgowan</groupId>
