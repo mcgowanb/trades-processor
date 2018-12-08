@@ -1,19 +1,29 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+package com.mcgown.trades.web.controller;
+
+import static junit.framework.TestCase.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.http.HttpStatus;
 
-import static org.junit.Assert.*;
+import com.mcgowan.trades.common.TradeDTO;
 
-@RunWith(Arquillian.class)
+@RunWith(MockitoJUnitRunner.class)
 public class ApiControllerTest {
-  @Deployment
-  public static JavaArchive createDeployment() {
-    return ShrinkWrap.create(JavaArchive.class)
-        .addClass(com.mcgown.trades.web.controller.ApiController.class)
-        .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+
+  private ApiController controller;
+
+  @Before
+  public void setUp() throws Exception {
+    controller = new ApiController();
   }
 
+  @Test
+  public void process_trade_returns_200() {
+    HttpStatus result = controller.processTrade(Mockito.mock(TradeDTO.class));
+    assertTrue(result.is2xxSuccessful());
+  }
 }
