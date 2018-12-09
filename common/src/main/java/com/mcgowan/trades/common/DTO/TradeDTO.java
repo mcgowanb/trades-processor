@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Currency;
 
+import javax.validation.constraints.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +17,6 @@ import lombok.ToString;
 
 import com.google.common.base.Preconditions;
 import com.neovisionaries.i18n.CountryCode;
-import com.sun.istack.internal.NotNull;
 
 @Builder
 @Getter
