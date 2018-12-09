@@ -1,34 +1,60 @@
-package com.mcgowan.trades.common;
+package com.mcgowan.trades.common.DTO;
+
+import static java.util.Objects.nonNull;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Currency;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import com.google.common.base.Preconditions;
 import com.neovisionaries.i18n.CountryCode;
+import com.sun.istack.internal.NotNull;
 
 @Builder
 @Getter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class TradeDTO implements Serializable {
 
-  private final Long userId;
+  @NotNull
+  private Long userId;
 
-  private final String currencyFrom;
+  @NotNull
+  private Currency currencyFrom;
 
-  private final String currencyTo;
+  @NotNull
+  private Currency currencyTo;
 
-  private final BigDecimal amountSell;
+  @NotNull
+  private BigDecimal amountSell;
 
-  private final BigDecimal amountBuy;
+  @NotNull
+  private BigDecimal amountBuy;
 
-  private final BigDecimal rate;
+  @NotNull
+  private BigDecimal rate;
 
-  private final LocalDateTime timePlaced;
+  @NotNull
+  private LocalDateTime timePlaced;
 
-  private final CountryCode originatingCountry;
+  @NotNull
+  private CountryCode originatingCountry;
+
+  public void validate() {
+    Preconditions.checkArgument(nonNull(userId), "User id is required");
+    Preconditions.checkArgument(nonNull(currencyFrom), "You must provide a selling currency type");
+    Preconditions.checkArgument(nonNull(currencyTo), "You must provide a buying currency type");
+    Preconditions.checkArgument(amountBuy.compareTo(BigDecimal.ZERO) > 0, "Buying amount must be greater than 0");
+    Preconditions.checkArgument(amountSell.compareTo(BigDecimal.ZERO) > 0, "Selling amount must be greater than 0");
+    Preconditions.checkArgument(rate.compareTo(BigDecimal.ZERO) > 0, "Rate must be greater than 0");
+  }
 
 }

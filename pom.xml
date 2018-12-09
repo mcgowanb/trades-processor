@@ -26,6 +26,7 @@
     <spring-boot-starter-actuator.version>2.1.1.RELEASE</spring-boot-starter-actuator.version>
     <nv-i18n.version>1.23</nv-i18n.version>
     <lombok.version>1.18.4</lombok.version>
+    <guava.version>27.0.1-jre</guava.version>
   </properties>
 
   <modules>
@@ -88,6 +89,11 @@
       <artifactId>hamcrest-all</artifactId>
       <version>${hamcrest-all.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
     </dependency>
 
 
