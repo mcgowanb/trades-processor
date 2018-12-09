@@ -33,6 +33,7 @@
     <nv-i18n.version>1.23</nv-i18n.version>
     <lombok.version>1.18.4</lombok.version>
     <guava.version>27.0.1-jre</guava.version>
+    <token-bucket.version>1.6</token-bucket.version>
 
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
   </properties>
@@ -41,6 +42,7 @@
     <module>common</module>
     <module>web</module>
     <module>producer</module>
+    <module>consumer</module>
   </modules>
 
   <dependencyManagement>
@@ -70,6 +72,11 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-amqp</artifactId>
         <version>${spring-boot-starter-amqp.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.isomorphism</groupId>
+        <artifactId>token-bucket</artifactId>
+        <version>${token-bucket.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -114,8 +121,6 @@
       <artifactId>guava</artifactId>
       <version>${guava.version}</version>
     </dependency>
-
-
   </dependencies>
 
   <build>
