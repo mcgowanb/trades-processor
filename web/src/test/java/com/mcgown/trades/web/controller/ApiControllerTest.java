@@ -1,7 +1,7 @@
-package com.mcgowan.trades.web.controller;
+package com.mcgown.trades.web.controller;
 
-import static com.mcgowan.trades.common.DTO.com.mcgowan.trades.common.utilities.Utilities.randomBigDecimal;
-import static com.mcgowan.trades.common.DTO.com.mcgowan.trades.common.utilities.Utilities.randomLong;
+import static com.mcgowan.trades.common.utilities.Utility.randomBigDecimal;
+import static com.mcgowan.trades.common.utilities.Utility.randomLong;
 import static com.mcgowan.trades.web.TestUtilities.randomDate;
 import static junit.framework.TestCase.assertTrue;
 

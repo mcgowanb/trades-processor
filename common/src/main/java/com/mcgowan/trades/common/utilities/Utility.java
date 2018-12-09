@@ -1,9 +1,9 @@
-package com.mcgowan.trades.common.DTO.com.mcgowan.trades.common.utilities;
+package com.mcgowan.trades.common.utilities;
 
 import java.math.BigDecimal;
 import java.util.Random;
 
-public class Utilities {
+public class Utility {
 
   private static final Random random = new Random();
 
@@ -12,7 +12,6 @@ public class Utilities {
   }
 
   public static BigDecimal randomBigDecimal() {
-    return BigDecimal.valueOf(random.nextDouble());
+    return BigDecimal.valueOf(randomLong());
   }
-
 }

@@ -1,6 +1,4 @@
-package com.mcgowan.trades.web.controller;
-
-import javax.validation.Valid;
+package com.mcgown.trades.web.controller;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -18,7 +16,7 @@ import com.mcgowan.trades.common.DTO.TradeDTO;
 public class ApiController {
 
   @PostMapping("/trade")
-  public HttpStatus processTrade(@Valid @RequestBody final TradeDTO tradeDTO) {
+  public HttpStatus processTrade(@RequestBody final TradeDTO tradeDTO) {
     tradeDTO.validate();
     return HttpStatus.OK;
   }
