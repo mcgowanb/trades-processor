@@ -19,16 +19,19 @@
   </licenses>
 
   <properties>
+    <java.version>1.8</java.version>
     <spring-test.version>5.1.3.RELEASE</spring-test.version>
     <junit.version>4.12</junit.version>
     <mockito-all.version>1.9.5</mockito-all.version>
     <hamcrest-all.version>1.3</hamcrest-all.version>
-    <spring-boot-starter-actuator.version>2.1.1.RELEASE</spring-boot-starter-actuator.version>
+    <spring-boot-starter-actuator.version>${spring-boot-autoconfigure.version}</spring-boot-starter-actuator.version>
     <nv-i18n.version>1.23</nv-i18n.version>
     <lombok.version>1.18.4</lombok.version>
     <guava.version>27.0.1-jre</guava.version>
-    <amqp-client.version>5.5.1</amqp-client.version>
     <spring-context.version>5.1.3.RELEASE</spring-context.version>
+    <spring-boot-starter-amqp.version>${spring-boot-autoconfigure.version}</spring-boot-starter-amqp.version>
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+    <spring-boot-autoconfigure.version>2.1.1.RELEASE</spring-boot-autoconfigure.version>
   </properties>
 
   <modules>
@@ -47,7 +50,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-autoconfigure</artifactId>
-        <version>${org.springframework.version}</version>
+        <version>${spring-boot-autoconfigure.version}</version>
       </dependency>
       <dependency>
         <groupId>com.mcgowan</groupId>
@@ -61,11 +64,10 @@
         <version>${spring-boot-starter-actuator.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.rabbitmq</groupId>
-        <artifactId>amqp-client</artifactId>
-        <version>${amqp-client.version}</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-amqp</artifactId>
+        <version>${spring-boot-starter-amqp.version}</version>
       </dependency>
-
     </dependencies>
   </dependencyManagement>
 
@@ -118,6 +120,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <source>8</source>
           <target>8</target>
