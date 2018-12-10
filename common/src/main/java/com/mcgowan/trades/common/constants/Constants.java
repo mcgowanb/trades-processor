@@ -25,4 +25,6 @@ public class Constants {
   public static final Boolean IS_EXCLUSIVE = false;
 
   public static final Boolean AUTO_DELETE = false;
+
+  public static final Integer RETRY_DELAY = 3000;
 }
