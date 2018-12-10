@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Currency;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,13 +18,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.common.base.Preconditions;
 import com.mcgowan.trades.common.constants.Constants;
 import com.neovisionaries.i18n.CountryCode;
 
 @Builder
 @Getter
-@ToString
+@ToString(exclude = "properties")
 @NoArgsConstructor
 @AllArgsConstructor
 public class TradeDTO implements Serializable {
@@ -47,7 +49,8 @@ public class TradeDTO implements Serializable {
   private BigDecimal rate;
 
   @NotNull
-  private LocalDateTime timePlaced;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+  private Date timePlaced;
 
   @NotNull
   private CountryCode originatingCountry;
