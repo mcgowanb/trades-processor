@@ -37,6 +37,7 @@
 
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <javax.inject.version>1</javax.inject.version>
+    <jackson-dataformat-xml.version>2.8.5</jackson-dataformat-xml.version>
   </properties>
 
   <modules>
@@ -78,6 +79,11 @@
         <groupId>org.isomorphism</groupId>
         <artifactId>token-bucket</artifactId>
         <version>${token-bucket.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-xml</artifactId>
+        <version>${jackson-dataformat-xml.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

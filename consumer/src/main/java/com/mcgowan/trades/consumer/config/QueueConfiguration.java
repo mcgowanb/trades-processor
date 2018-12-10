@@ -32,6 +32,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.messaging.handler.annotation.support.DefaultMessageHandlerMethodFactory;
 
+import com.mcgowan.trades.common.constants.Constants;
+
 @Configuration
 @EnableRabbit
 public class QueueConfiguration implements RabbitListenerConfigurer {
@@ -59,8 +61,8 @@ public class QueueConfiguration implements RabbitListenerConfigurer {
   @Bean
   public CustomExchange delayExchange() {
     Map<String, Object> args = new HashMap<>();
-    args.put("X-delayed-type", "direct");
-    return new CustomExchange(RETRY_EXCHANGE, "x-delayed-message", IS_DURABLE, AUTO_DELETE, args);
+    args.put("x-delayed-type", "direct");
+    return new CustomExchange(Constants.RETRY_EXCHANGE, "x-delayed-message", IS_DURABLE, AUTO_DELETE, args);
   }
 
   @Bean
