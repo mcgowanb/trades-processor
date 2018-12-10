@@ -27,4 +27,8 @@ public class Constants {
   public static final Boolean AUTO_DELETE = false;
 
   public static final Integer RETRY_DELAY = 3000;
+
+  public static final Integer MAX_RETRIES = 3;
+
+  public static final String RETRY_HEADER_COUNT = "retry-count";
 }

@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Currency;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
@@ -16,6 +18,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import com.google.common.base.Preconditions;
+import com.mcgowan.trades.common.constants.Constants;
 import com.neovisionaries.i18n.CountryCode;
 
 @Builder
@@ -48,6 +51,11 @@ public class TradeDTO implements Serializable {
 
   @NotNull
   private CountryCode originatingCountry;
+
+  @Builder.Default
+  private Map<String, Object> properties = new HashMap<String, Object>() {{
+    put(Constants.RETRY_HEADER_COUNT, 0);
+  }};
 
   public void validate() {
     Preconditions.checkArgument(nonNull(userId), "User id is required");
