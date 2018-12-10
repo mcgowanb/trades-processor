@@ -36,7 +36,7 @@ import com.mcgowan.trades.common.constants.Constants;
 
 @Configuration
 @EnableRabbit
-public class QueueConfiguration implements RabbitListenerConfigurer {
+public class ConsumerQueueConfig implements RabbitListenerConfigurer {
 
   @Bean
   public Queue queue() {
