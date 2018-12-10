@@ -11,11 +11,13 @@ import java.util.Currency;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 
 import com.mcgowan.trades.common.DTO.TradeDTO;
+import com.mcgowan.trades.producer.QueueProducer;
 import com.neovisionaries.i18n.CountryCode;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -23,9 +25,12 @@ public class ApiControllerTest {
 
   private ApiController controller;
 
+  @Mock
+  private QueueProducer producer;
+
   @Before
   public void setUp() throws Exception {
-    controller = new ApiController();
+    controller = new ApiController(producer);
   }
 
   @Test

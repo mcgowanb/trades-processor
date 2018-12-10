@@ -9,22 +9,23 @@ import javax.inject.Named;
 import lombok.extern.log4j.Log4j2;
 
 import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.stereotype.Service;
 
 import com.mcgowan.trades.common.DTO.TradeDTO;
-import com.rabbitmq.client.ConnectionFactory;
 
 @Log4j2
-@Named
+@Service
 public class QueueProducer {
 
-  private final RabbitTemplate rabbitTemplate;
+  @Inject
+  private RabbitTemplate rabbitTemplate;
 
   private final ConnectionFactory connectionFactory;
 
   @Inject
-  public QueueProducer(RabbitTemplate rabbitTemplate, ConnectionFactory connectionFactory) {
-    this.rabbitTemplate = rabbitTemplate;
+  public QueueProducer(ConnectionFactory connectionFactory) {
     this.connectionFactory = connectionFactory;
   }
 

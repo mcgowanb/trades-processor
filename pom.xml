@@ -66,6 +66,12 @@
         <scope>compile</scope>
       </dependency>
       <dependency>
+        <groupId>com.mcgowan</groupId>
+        <artifactId>producer</artifactId>
+        <version>${project.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
         <version>${spring-boot-starter-actuator.version}</version>

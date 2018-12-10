@@ -59,6 +59,10 @@
       <groupId>com.mcgowan</groupId>
       <artifactId>common</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.mcgowan</groupId>
+      <artifactId>producer</artifactId>
+    </dependency>
   </dependencies>
 
 
