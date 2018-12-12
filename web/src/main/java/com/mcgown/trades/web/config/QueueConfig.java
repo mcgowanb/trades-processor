@@ -25,7 +25,7 @@ public class QueueConfig {
 
   @Bean
   public ConnectionFactory connectionFactory(){
-    final CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
+    final CachingConnectionFactory connectionFactory = new CachingConnectionFactory(host);
     connectionFactory.setUsername(userName);
     connectionFactory.setPassword(password);
     connectionFactory.setPort(port);
