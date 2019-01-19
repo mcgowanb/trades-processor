@@ -14,14 +14,14 @@ import com.mcgowan.trades.common.constants.Constants;
 
 @Named
 @Log4j2
-public class ListenerService {
+public class ConsumerService {
 
   private final RabbitTemplate rabbitTemplate;
 
   private final TokenBucket tokenBucket;
 
   @Inject
-  public ListenerService(RabbitTemplate rabbitTemplate, TokenBucket tokenBucket) {
+  public ConsumerService(RabbitTemplate rabbitTemplate, TokenBucket tokenBucket) {
     this.rabbitTemplate = rabbitTemplate;
     this.tokenBucket = tokenBucket;
   }

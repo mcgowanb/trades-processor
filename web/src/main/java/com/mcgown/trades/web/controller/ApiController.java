@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mcgowan.trades.common.DTO.TradeDTO;
-import com.mcgowan.trades.consumer.service.ListenerService;
 import com.mcgowan.trades.producer.QueueProducer;
 
 @RestController
