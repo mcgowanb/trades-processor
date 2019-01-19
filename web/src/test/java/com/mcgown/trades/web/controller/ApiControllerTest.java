@@ -17,6 +17,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 
 import com.mcgowan.trades.common.DTO.TradeDTO;
+import com.mcgowan.trades.consumer.service.ListenerService;
 import com.mcgowan.trades.producer.QueueProducer;
 import com.neovisionaries.i18n.CountryCode;
 
