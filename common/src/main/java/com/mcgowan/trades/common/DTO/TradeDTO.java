@@ -4,7 +4,6 @@ import static java.util.Objects.nonNull;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Currency;
 import java.util.Date;
 import java.util.HashMap;
@@ -29,6 +28,8 @@ import com.neovisionaries.i18n.CountryCode;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TradeDTO implements Serializable {
+
+  private String id;
 
   @NotNull
   private Long userId;
@@ -56,7 +57,7 @@ public class TradeDTO implements Serializable {
   private CountryCode originatingCountry;
 
   @Builder.Default
-  private Map<String, Object> properties = new HashMap<String, Object>() {{
+  private final Map<String, Object> properties = new HashMap<String, Object>() {{
     put(Constants.RETRY_HEADER_COUNT, 0);
   }};
 
@@ -67,6 +68,20 @@ public class TradeDTO implements Serializable {
     Preconditions.checkArgument(amountBuy.compareTo(BigDecimal.ZERO) > 0, "Buying amount must be greater than 0");
     Preconditions.checkArgument(amountSell.compareTo(BigDecimal.ZERO) > 0, "Selling amount must be greater than 0");
     Preconditions.checkArgument(rate.compareTo(BigDecimal.ZERO) > 0, "Rate must be greater than 0");
+  }
+
+  public static TradeDTO entityToDto(final TradeEntity entity) {
+    return TradeDTO.builder()
+        .userId(entity.getUserId())
+        .currencyFrom(entity.getCurrencyFrom())
+        .currencyTo(entity.getCurrencyTo())
+        .amountBuy(entity.getAmountBuy())
+        .amountSell(entity.getAmountSell())
+        .id(entity.getId())
+        .rate(entity.getRate())
+        .timePlaced(entity.getTimePlaced())
+        .originatingCountry(CountryCode.valueOf(entity.getOriginatingCountry()))
+        .build();
   }
 
 }
