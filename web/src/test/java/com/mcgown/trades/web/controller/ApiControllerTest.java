@@ -17,8 +17,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 
 import com.mcgowan.trades.common.DTO.TradeDTO;
-import com.mcgowan.trades.consumer.service.ListenerService;
 import com.mcgowan.trades.producer.QueueProducer;
+import com.mcgown.trades.web.repository.TradeRepository;
 import com.neovisionaries.i18n.CountryCode;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -29,9 +29,12 @@ public class ApiControllerTest {
   @Mock
   private QueueProducer producer;
 
+  @Mock
+  private TradeRepository tradeRepository;
+
   @Before
   public void setUp() throws Exception {
-    controller = new ApiController(producer);
+    controller = new ApiController(producer, tradeRepository);
   }
 
   @Test

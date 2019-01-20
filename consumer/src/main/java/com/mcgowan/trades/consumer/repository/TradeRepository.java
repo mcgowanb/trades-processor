@@ -1,4 +1,6 @@
 package com.mcgowan.trades.consumer.repository;
 
-public interface TradeRepository {
+import com.mcgowan.trades.common.entity.Trade;
+
+public interface TradeRepository extends ReactiveCrudRepository<Trade, String> {
 }

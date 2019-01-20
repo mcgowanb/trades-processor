@@ -39,6 +39,8 @@
     <javax.inject.version>1</javax.inject.version>
     <jackson-dataformat-xml.version>2.8.5</jackson-dataformat-xml.version>
     <rxjava.version>2.0.4</rxjava.version>
+    <spring-boot-starter-webflux.version>2.1.2.RELEASE</spring-boot-starter-webflux.version>
+    <spring-boot-starter-data-mongodb-reactive.version>2.1.2.RELEASE</spring-boot-starter-data-mongodb-reactive.version>
   </properties>
 
   <modules>
@@ -96,6 +98,16 @@
         <groupId>io.reactivex.rxjava2</groupId>
         <artifactId>rxjava</artifactId>
         <version>${rxjava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+        <version>${spring-boot-starter-webflux.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+        <version>${spring-boot-starter-data-mongodb-reactive.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
