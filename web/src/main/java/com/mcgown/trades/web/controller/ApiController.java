@@ -9,6 +9,7 @@ import reactor.core.publisher.Flux;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,11 +51,11 @@ public class ApiController {
   //    return observer;
   //  }
 
-  @GetMapping("/trades-reactive")
+  @GetMapping(value = "/trades-reactive", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
   public Flux<TradeDTO> getQuoteFlux() {
     // If you want to use a shorter version of the Flux, use take(100) at the end of the statement below
     log.info("trades-reactive endpoint hit");
-    return tradeRepository.findAll().delayElements(Duration.ofMillis(DELAY_PER_ITEM_MS)).map(TradeDTO::tradeToDto);
+    return tradeRepository.findAll().map(TradeDTO::tradeToDto);
   }
 
   @GetMapping("/trades-reactive-paged")
