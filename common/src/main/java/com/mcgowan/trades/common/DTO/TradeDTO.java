@@ -20,6 +20,7 @@ import lombok.ToString;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.common.base.Preconditions;
 import com.mcgowan.trades.common.constants.Constants;
+import com.mcgowan.trades.common.entity.Trade;
 import com.neovisionaries.i18n.CountryCode;
 
 @Builder
@@ -70,7 +71,7 @@ public class TradeDTO implements Serializable {
     Preconditions.checkArgument(rate.compareTo(BigDecimal.ZERO) > 0, "Rate must be greater than 0");
   }
 
-  public static TradeDTO entityToDto(final TradeEntity entity) {
+  public static TradeDTO tradeToDto(final Trade entity) {
     return TradeDTO.builder()
         .userId(entity.getUserId())
         .currencyFrom(entity.getCurrencyFrom())
