@@ -7,8 +7,7 @@ services:
     hostname: mongo
     ports:
       - 27017:27017
-  #    volumes:
-  #      - mongodata:/data/db
+
   rabbitmq:
     image: heidiks/rabbitmq-delayed-message-exchange:latest
     container_name: trades-rabbit

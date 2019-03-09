@@ -1,0 +1,26 @@
+logging:
+    level:
+        org:
+            mongodb:
+                driver: ERROR
+            springframework:
+                boot:
+                    web:
+                        embedded:
+                            netty: DEBUG
+                http:
+                    server:
+                        reactive:
+                            ReactorHttpHandlerAdapter: DEBUG
+        reactor:
+            ipc:
+                netty:
+                    http: DEBUG
+server:
+    port: 9001
+spring:
+    rabbitmq:
+        host: localhost
+        password: guest
+        port: 5672
+        username: guest
