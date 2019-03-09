@@ -37,7 +37,7 @@
 
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <javax.inject.version>1</javax.inject.version>
-    <jackson-dataformat-xml.version>2.8.5</jackson-dataformat-xml.version>
+    <jackson-dataformat-xml.version>2.9.5</jackson-dataformat-xml.version>
     <rxjava.version>2.0.4</rxjava.version>
     <spring-boot-starter-webflux.version>2.1.2.RELEASE</spring-boot-starter-webflux.version>
     <spring-boot-starter-data-mongodb-reactive.version>2.1.2.RELEASE</spring-boot-starter-data-mongodb-reactive.version>

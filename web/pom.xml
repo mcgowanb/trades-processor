@@ -38,6 +38,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+      </exclusions>
       <version>${org.springframework.version}</version>
       <scope>compile</scope>
     </dependency>
@@ -75,7 +81,7 @@
     <dependency>
       <groupId>com.mcgowan</groupId>
       <artifactId>consumer</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>${parent.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

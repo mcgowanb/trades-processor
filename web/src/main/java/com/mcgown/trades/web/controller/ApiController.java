@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mcgowan.trades.common.DTO.TradeDTO;
+import com.mcgowan.trades.common.entity.Trade;
 import com.mcgowan.trades.producer.QueueProducer;
 import com.mcgown.trades.web.repository.TradeRepository;
 
@@ -52,10 +53,10 @@ public class ApiController {
   //  }
 
   @GetMapping(value = "/trades-reactive", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-  public Flux<TradeDTO> getQuoteFlux() {
+  public Flux<Trade> getQuoteFlux() {
     // If you want to use a shorter version of the Flux, use take(100) at the end of the statement below
     log.info("trades-reactive endpoint hit");
-    return tradeRepository.findAll().map(TradeDTO::tradeToDto).delayElements(Duration.ofMillis(DELAY_PER_ITEM_MS));
+    return tradeRepository.findAll().delayElements(Duration.ofMillis(DELAY_PER_ITEM_MS));
   }
 
   @GetMapping("/trades-reactive-paged")
