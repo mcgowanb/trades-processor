@@ -36,7 +36,7 @@ public class ConsumerService {
     try {
       log.info("Following message recieved: {}", trade);
       tradeRepository.save(Trade.dtoToTrade(trade)).subscribe(s -> {
-        log.info("Trade persisted to mongoDB {}", trade);
+        log.info("Trade persisted to mongoDB {}", s);
       });
       //auto ACK on message
       //throw exception to retry message

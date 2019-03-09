@@ -55,7 +55,7 @@ public class ApiController {
   public Flux<TradeDTO> getQuoteFlux() {
     // If you want to use a shorter version of the Flux, use take(100) at the end of the statement below
     log.info("trades-reactive endpoint hit");
-    return tradeRepository.findAll().map(TradeDTO::tradeToDto);
+    return tradeRepository.findAll().map(TradeDTO::tradeToDto).delayElements(Duration.ofMillis(DELAY_PER_ITEM_MS));
   }
 
   @GetMapping("/trades-reactive-paged")
@@ -65,4 +65,9 @@ public class ApiController {
         .delayElements(Duration.ofMillis(DELAY_PER_ITEM_MS))
         .map(TradeDTO::tradeToDto);
   }
+
+  //  @GetMapping("/quotes-blocking")
+  //  public Iterable<Trade> getQuotesBlocking() throws Exception {
+  //    return tradeRepository.findAll();
+  //  }
 }
